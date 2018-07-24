@@ -1,0 +1,37 @@
+
+{
+    "invoiceprojectApp": {
+        "invoiceReport" : {
+            "home": {
+                "title": "Invoice Reports",
+                "createLabel": "Create a new Invoice Report",
+                "createOrEditLabel": "Create or edit a Invoice Report"
+            },
+            "created": "A new Invoice Report is created with identifier {{ param }}",
+            "updated": "A Invoice Report is updated with identifier {{ param }}",
+            "deleted": "A Invoice Report is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Invoice Report {{ id }}?"
+            },
+            "detail": {
+                "title": "Invoice Report"
+            },
+            "fs": "Fs",
+            "jehj": "Jehj",
+            "sehj": "Sehj",
+            "jshj": "Jshj",
+            "nsrsum": "Nsrsum",
+            "createTime": "Create Time",
+            "updateTime": "Update Time",
+            "help": {
+                "fs": "开具总份数",
+                "jehj": "金额合计",
+                "sehj": "税额合计",
+                "jshj": "价税合计",
+                "nsrsum": "开票纳税人合计",
+                "createTime": "创建时间",
+                "updateTime": "更新时间"
+            }
+        }
+    }
+}

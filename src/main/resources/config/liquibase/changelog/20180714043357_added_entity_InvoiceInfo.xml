@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="now()" dbms="mysql"/>
+    <property name="autoIncrement" value="true"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <!--
+        Added the entity InvoiceInfo.
+    -->
+    <changeSet id="20180714043357-1" author="jhipster">
+        <createTable tableName="invoice_info" remarks="用户发票信息">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="kp_time" type="varchar(255)" remarks="开票时间">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="kp_status" type="varchar(4)" remarks="1:开票中、2：成功、3：失败">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="kp_money" type="integer" remarks="开票金额(分)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="title_type" type="varchar(4)" remarks="1:个人、2：企业">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="invoice_title" type="varchar(11)" remarks="发票抬头">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="qyduty_num" type="varchar(20)" remarks="企业税号">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="fp_content" type="varchar(12)" remarks="发票内容">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="email" type="varchar(12)" remarks="电子邮箱">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="phone" type="varchar(12)" remarks="手机号码">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="pay_recordid" type="varchar(50)" remarks="关联支付记录id">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="invgu_id" type="varchar(20)" remarks="查询开票结果唯一标识">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="fpdm" type="varchar(20)" remarks="发票代码">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="fphm" type="varchar(20)" remarks="发票号码">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="kpr" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="kpr_id" type="varchar(20)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="reson" type="varchar(255)" remarks="失败原因">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="create_time" type="datetime" remarks="创建时间">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="update_time" type="datetime" remarks="更新时间">
+                <constraints nullable="true" />
+            </column>
+            <column name="extract_id" type="bigint">
+                <constraints unique="true" nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="invoice_info" columnName="create_time" columnDataType="datetime"/>
+        <dropDefaultValue tableName="invoice_info" columnName="update_time" columnDataType="datetime"/>
+        
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+</databaseChangeLog>

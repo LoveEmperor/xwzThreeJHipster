@@ -1,0 +1,90 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-access-token-heading" jhiTranslate="invoiceprojectApp.accessToken.home.createOrEditLabel">Create or edit a Access Token</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!accessToken.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="accessToken.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.accessToken.nsrmc" for="field_nsrmc" [ngbTooltip]="'invoiceprojectApp.accessToken.help.nsrmc' | translate">Nsrmc</label>
+                    <input type="text" class="form-control" name="nsrmc" id="field_nsrmc"
+                        [(ngModel)]="accessToken.nsrmc" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.nsrmc?.dirty && editForm.controls.nsrmc?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.nsrmc?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.accessToken.nsrsbh" for="field_nsrsbh" [ngbTooltip]="'invoiceprojectApp.accessToken.help.nsrsbh' | translate">Nsrsbh</label>
+                    <input type="text" class="form-control" name="nsrsbh" id="field_nsrsbh"
+                        [(ngModel)]="accessToken.nsrsbh" required maxlength="30"/>
+                    <div [hidden]="!(editForm.controls.nsrsbh?.dirty && editForm.controls.nsrsbh?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.nsrsbh?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.nsrsbh?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 30 }">
+                        This field cannot be longer than 30 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.accessToken.expires" for="field_expires" [ngbTooltip]="'invoiceprojectApp.accessToken.help.expires' | translate">Expires</label>
+                    <input type="text" class="form-control" name="expires" id="field_expires"
+                        [(ngModel)]="accessToken.expires" maxlength="8"/>
+                    <div [hidden]="!(editForm.controls.expires?.dirty && editForm.controls.expires?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.expires?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 8 }">
+                        This field cannot be longer than 8 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.accessToken.pkey" for="field_pkey" [ngbTooltip]="'invoiceprojectApp.accessToken.help.pkey' | translate">Pkey</label>
+                    <input type="text" class="form-control" name="pkey" id="field_pkey"
+                        [(ngModel)]="accessToken.pkey" required maxlength="40"/>
+                    <div [hidden]="!(editForm.controls.pkey?.dirty && editForm.controls.pkey?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.pkey?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.pkey?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 40 }">
+                        This field cannot be longer than 40 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.accessToken.createTime" for="field_createTime" [ngbTooltip]="'invoiceprojectApp.accessToken.help.createTime' | translate">Create Time</label>
+                    <div class="d-flex">
+                        <input id="field_createTime" type="datetime-local" class="form-control" name="createTime" [(ngModel)]="createTime"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.accessToken.updateTime" for="field_updateTime" [ngbTooltip]="'invoiceprojectApp.accessToken.help.updateTime' | translate">Update Time</label>
+                    <div class="d-flex">
+                        <input id="field_updateTime" type="datetime-local" class="form-control" name="updateTime" [(ngModel)]="updateTime"
+                        />
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

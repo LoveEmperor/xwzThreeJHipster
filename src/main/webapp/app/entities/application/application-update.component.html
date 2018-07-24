@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-application-heading" jhiTranslate="invoiceprojectApp.application.home.createOrEditLabel">Create or edit a Application</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!application.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="application.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.application.appId" for="field_appId" [ngbTooltip]="'invoiceprojectApp.application.help.appId' | translate">App Id</label>
+                    <input type="text" class="form-control" name="appId" id="field_appId"
+                        [(ngModel)]="application.appId" required maxlength="36"/>
+                    <div [hidden]="!(editForm.controls.appId?.dirty && editForm.controls.appId?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.appId?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.appId?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 36 }">
+                        This field cannot be longer than 36 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.application.appSecret" for="field_appSecret" [ngbTooltip]="'invoiceprojectApp.application.help.appSecret' | translate">App Secret</label>
+                    <input type="text" class="form-control" name="appSecret" id="field_appSecret"
+                        [(ngModel)]="application.appSecret" required maxlength="36"/>
+                    <div [hidden]="!(editForm.controls.appSecret?.dirty && editForm.controls.appSecret?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.appSecret?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.appSecret?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 36 }">
+                        This field cannot be longer than 36 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.application.createTime" for="field_createTime" [ngbTooltip]="'invoiceprojectApp.application.help.createTime' | translate">Create Time</label>
+                    <div class="d-flex">
+                        <input id="field_createTime" type="datetime-local" class="form-control" name="createTime" [(ngModel)]="createTime"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.application.updateTime" for="field_updateTime" [ngbTooltip]="'invoiceprojectApp.application.help.updateTime' | translate">Update Time</label>
+                    <div class="d-flex">
+                        <input id="field_updateTime" type="datetime-local" class="form-control" name="updateTime" [(ngModel)]="updateTime"
+                        />
+                    </div>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

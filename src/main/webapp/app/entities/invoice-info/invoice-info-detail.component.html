@@ -1,0 +1,101 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="invoiceInfo">
+            <h2><span jhiTranslate="invoiceprojectApp.invoiceInfo.detail.title">Invoice Info</span> {{invoiceInfo.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="invoiceprojectApp.invoiceInfo.kpTime" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.kpTime' | translate">Kp Time</span></dt>
+                <dd>
+                    <span>{{invoiceInfo.kpTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.invoiceInfo.kpStatus" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.kpStatus' | translate">Kp Status</span></dt>
+                <dd>
+                    <span>{{invoiceInfo.kpStatus}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.invoiceInfo.kpMoney" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.kpMoney' | translate">Kp Money</span></dt>
+                <dd>
+                    <span>{{invoiceInfo.kpMoney}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.invoiceInfo.titleType" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.titleType' | translate">Title Type</span></dt>
+                <dd>
+                    <span>{{invoiceInfo.titleType}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.invoiceInfo.invoiceTitle" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.invoiceTitle' | translate">Invoice Title</span></dt>
+                <dd>
+                    <span>{{invoiceInfo.invoiceTitle}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.invoiceInfo.qydutyNum" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.qydutyNum' | translate">Qyduty Num</span></dt>
+                <dd>
+                    <span>{{invoiceInfo.qydutyNum}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.invoiceInfo.fpContent" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.fpContent' | translate">Fp Content</span></dt>
+                <dd>
+                    <span>{{invoiceInfo.fpContent}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.invoiceInfo.email" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.email' | translate">Email</span></dt>
+                <dd>
+                    <span>{{invoiceInfo.email}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.invoiceInfo.phone" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.phone' | translate">Phone</span></dt>
+                <dd>
+                    <span>{{invoiceInfo.phone}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.invoiceInfo.payRecordid" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.payRecordid' | translate">Pay Recordid</span></dt>
+                <dd>
+                    <span>{{invoiceInfo.payRecordid}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.invoiceInfo.invguId" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.invguId' | translate">Invgu Id</span></dt>
+                <dd>
+                    <span>{{invoiceInfo.invguId}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.invoiceInfo.fpdm" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.fpdm' | translate">Fpdm</span></dt>
+                <dd>
+                    <span>{{invoiceInfo.fpdm}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.invoiceInfo.fphm" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.fphm' | translate">Fphm</span></dt>
+                <dd>
+                    <span>{{invoiceInfo.fphm}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.invoiceInfo.kpr">Kpr</span></dt>
+                <dd>
+                    <span>{{invoiceInfo.kpr}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.invoiceInfo.kprId">Kpr Id</span></dt>
+                <dd>
+                    <span>{{invoiceInfo.kprId}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.invoiceInfo.reson" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.reson' | translate">Reson</span></dt>
+                <dd>
+                    <span>{{invoiceInfo.reson}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.invoiceInfo.createTime" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.createTime' | translate">Create Time</span></dt>
+                <dd>
+                    <span>{{invoiceInfo.createTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.invoiceInfo.updateTime" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.updateTime' | translate">Update Time</span></dt>
+                <dd>
+                    <span>{{invoiceInfo.updateTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.invoiceInfo.extract">Extract</span></dt>
+                <dd>
+                    <div *ngIf="invoiceInfo.extractId">
+                        <a [routerLink]="['/e-invoice-info', invoiceInfo.extractId, 'view']">{{invoiceInfo.extractFphm}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/invoice-info', invoiceInfo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

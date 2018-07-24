@@ -1,0 +1,47 @@
+
+{
+    "invoiceprojectApp": {
+        "eInvoiceInfo" : {
+            "home": {
+                "title": "E Invoice Infos",
+                "createLabel": "Create a new E Invoice Info",
+                "createOrEditLabel": "Create or edit a E Invoice Info"
+            },
+            "created": "A new E Invoice Info is created with identifier {{ param }}",
+            "updated": "A E Invoice Info is updated with identifier {{ param }}",
+            "deleted": "A E Invoice Info is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete E Invoice Info {{ id }}?"
+            },
+            "detail": {
+                "title": "E Invoice Info"
+            },
+            "fpdm": "Fpdm",
+            "fphm": "Fphm",
+            "kprq": "Kprq",
+            "xfsh": "Xfsh",
+            "xfmc": "Xfmc",
+            "gfsh": "Gfsh",
+            "gfmc": "Gfmc",
+            "jehj": "Jehj",
+            "sehj": "Sehj",
+            "url": "Url",
+            "createTime": "Create Time",
+            "updateTime": "Update Time",
+            "help": {
+                "fpdm": "发票代码",
+                "fphm": "发票号码",
+                "kprq": "开票日期",
+                "xfsh": "销方税号",
+                "xfmc": "销方名称",
+                "gfsh": "购方税号",
+                "gfmc": "购方名称",
+                "jehj": "金额合计",
+                "sehj": "税额合计",
+                "url": "pdf文件路径",
+                "createTime": "创建时间",
+                "updateTime": "更新时间"
+            }
+        }
+    }
+}

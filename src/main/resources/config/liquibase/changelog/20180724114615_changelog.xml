@@ -1,0 +1,138 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="Administrator (generated)" id="1532432783096-1">
+        <setColumnRemarks columnName="app_id" tableName="application"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-2">
+        <setColumnRemarks columnName="app_secret" tableName="application"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-3">
+        <setColumnRemarks columnName="create_time" tableName="access_token"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-4">
+        <setColumnRemarks columnName="create_time" tableName="application"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-5">
+        <setColumnRemarks columnName="create_time" tableName="e_invoice_info"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-6">
+        <setColumnRemarks columnName="create_time" tableName="invoice_info"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-7">
+        <setColumnRemarks columnName="create_time" tableName="invoice_report"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-8">
+        <setColumnRemarks columnName="email" tableName="invoice_info"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-9">
+        <setColumnRemarks columnName="expires" tableName="access_token"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-10">
+        <setColumnRemarks columnName="fp_content" tableName="invoice_info"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-11">
+        <setColumnRemarks columnName="fpdm" tableName="e_invoice_info"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-12">
+        <setColumnRemarks columnName="fpdm" tableName="invoice_info"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-13">
+        <setColumnRemarks columnName="fphm" tableName="e_invoice_info"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-14">
+        <setColumnRemarks columnName="fphm" tableName="invoice_info"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-15">
+        <setColumnRemarks columnName="fs" tableName="invoice_report"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-16">
+        <setColumnRemarks columnName="gfmc" tableName="e_invoice_info"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-17">
+        <setColumnRemarks columnName="gfsh" tableName="e_invoice_info"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-18">
+        <setColumnRemarks columnName="invgu_id" tableName="invoice_info"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-19">
+        <setColumnRemarks columnName="invoice_title" tableName="invoice_info"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-20">
+        <setColumnRemarks columnName="jehj" tableName="e_invoice_info"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-21">
+        <setColumnRemarks columnName="jehj" tableName="invoice_report"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-22">
+        <setColumnRemarks columnName="jshj" tableName="invoice_report"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-23">
+        <setColumnRemarks columnName="kp_money" tableName="invoice_info"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-24">
+        <setColumnRemarks columnName="kp_status" tableName="invoice_info"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-25">
+        <setColumnRemarks columnName="kp_time" tableName="invoice_info"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-26">
+        <setColumnRemarks columnName="kprq" tableName="e_invoice_info"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-27">
+        <setColumnRemarks columnName="nsrmc" tableName="access_token"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-28">
+        <setColumnRemarks columnName="nsrsbh" tableName="access_token"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-29">
+        <setColumnRemarks columnName="nsrsum" tableName="invoice_report"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-30">
+        <setColumnRemarks columnName="pay_recordid" tableName="invoice_info"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-31">
+        <setColumnRemarks columnName="phone" tableName="invoice_info"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-32">
+        <setColumnRemarks columnName="pkey" tableName="access_token"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-33">
+        <setColumnRemarks columnName="qyduty_num" tableName="invoice_info"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-34">
+        <setColumnRemarks columnName="reson" tableName="invoice_info"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-35">
+        <setColumnRemarks columnName="sehj" tableName="e_invoice_info"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-36">
+        <setColumnRemarks columnName="sehj" tableName="invoice_report"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-37">
+        <setColumnRemarks columnName="title_type" tableName="invoice_info"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-38">
+        <setColumnRemarks columnName="update_time" tableName="access_token"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-39">
+        <setColumnRemarks columnName="update_time" tableName="application"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-40">
+        <setColumnRemarks columnName="update_time" tableName="e_invoice_info"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-41">
+        <setColumnRemarks columnName="update_time" tableName="invoice_info"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-42">
+        <setColumnRemarks columnName="update_time" tableName="invoice_report"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-43">
+        <setColumnRemarks columnName="url" tableName="e_invoice_info"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-44">
+        <setColumnRemarks columnName="xfmc" tableName="e_invoice_info"/>
+    </changeSet>
+    <changeSet author="Administrator (generated)" id="1532432783096-45">
+        <setColumnRemarks columnName="xfsh" tableName="e_invoice_info"/>
+    </changeSet>
+</databaseChangeLog>

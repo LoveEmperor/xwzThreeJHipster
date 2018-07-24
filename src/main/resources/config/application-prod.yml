@@ -16,7 +16,7 @@
 logging:
     level:
         ROOT: INFO
-        com.xwz.invoiceproject: INFO
+        com.fangle.invoiceproject: INFO
         io.github.jhipster: INFO
 
 spring:

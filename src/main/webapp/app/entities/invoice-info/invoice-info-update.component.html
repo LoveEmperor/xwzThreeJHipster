@@ -1,0 +1,241 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-invoice-info-heading" jhiTranslate="invoiceprojectApp.invoiceInfo.home.createOrEditLabel">Create or edit a Invoice Info</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!invoiceInfo.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="invoiceInfo.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.invoiceInfo.kpTime" for="field_kpTime" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.kpTime' | translate">Kp Time</label>
+                    <input type="text" class="form-control" name="kpTime" id="field_kpTime"
+                        [(ngModel)]="invoiceInfo.kpTime" required/>
+                    <div [hidden]="!(editForm.controls.kpTime?.dirty && editForm.controls.kpTime?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.kpTime?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.invoiceInfo.kpStatus" for="field_kpStatus" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.kpStatus' | translate">Kp Status</label>
+                    <input type="text" class="form-control" name="kpStatus" id="field_kpStatus"
+                        [(ngModel)]="invoiceInfo.kpStatus" required maxlength="4"/>
+                    <div [hidden]="!(editForm.controls.kpStatus?.dirty && editForm.controls.kpStatus?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.kpStatus?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.kpStatus?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 4 }">
+                        This field cannot be longer than 4 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.invoiceInfo.kpMoney" for="field_kpMoney" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.kpMoney' | translate">Kp Money</label>
+                    <input type="number" class="form-control" name="kpMoney" id="field_kpMoney"
+                        [(ngModel)]="invoiceInfo.kpMoney" required/>
+                    <div [hidden]="!(editForm.controls.kpMoney?.dirty && editForm.controls.kpMoney?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.kpMoney?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.kpMoney?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.invoiceInfo.titleType" for="field_titleType" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.titleType' | translate">Title Type</label>
+                    <input type="text" class="form-control" name="titleType" id="field_titleType"
+                        [(ngModel)]="invoiceInfo.titleType" required maxlength="4"/>
+                    <div [hidden]="!(editForm.controls.titleType?.dirty && editForm.controls.titleType?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.titleType?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.titleType?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 4 }">
+                        This field cannot be longer than 4 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.invoiceInfo.invoiceTitle" for="field_invoiceTitle" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.invoiceTitle' | translate">Invoice Title</label>
+                    <input type="text" class="form-control" name="invoiceTitle" id="field_invoiceTitle"
+                        [(ngModel)]="invoiceInfo.invoiceTitle" required maxlength="11"/>
+                    <div [hidden]="!(editForm.controls.invoiceTitle?.dirty && editForm.controls.invoiceTitle?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.invoiceTitle?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.invoiceTitle?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 11 }">
+                        This field cannot be longer than 11 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.invoiceInfo.qydutyNum" for="field_qydutyNum" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.qydutyNum' | translate">Qyduty Num</label>
+                    <input type="text" class="form-control" name="qydutyNum" id="field_qydutyNum"
+                        [(ngModel)]="invoiceInfo.qydutyNum" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.qydutyNum?.dirty && editForm.controls.qydutyNum?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.qydutyNum?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.invoiceInfo.fpContent" for="field_fpContent" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.fpContent' | translate">Fp Content</label>
+                    <input type="text" class="form-control" name="fpContent" id="field_fpContent"
+                        [(ngModel)]="invoiceInfo.fpContent" maxlength="12"/>
+                    <div [hidden]="!(editForm.controls.fpContent?.dirty && editForm.controls.fpContent?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.fpContent?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 12 }">
+                        This field cannot be longer than 12 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.invoiceInfo.email" for="field_email" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.email' | translate">Email</label>
+                    <input type="text" class="form-control" name="email" id="field_email"
+                        [(ngModel)]="invoiceInfo.email" maxlength="12"/>
+                    <div [hidden]="!(editForm.controls.email?.dirty && editForm.controls.email?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.email?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 12 }">
+                        This field cannot be longer than 12 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.invoiceInfo.phone" for="field_phone" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.phone' | translate">Phone</label>
+                    <input type="text" class="form-control" name="phone" id="field_phone"
+                        [(ngModel)]="invoiceInfo.phone" maxlength="12"/>
+                    <div [hidden]="!(editForm.controls.phone?.dirty && editForm.controls.phone?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.phone?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 12 }">
+                        This field cannot be longer than 12 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.invoiceInfo.payRecordid" for="field_payRecordid" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.payRecordid' | translate">Pay Recordid</label>
+                    <input type="text" class="form-control" name="payRecordid" id="field_payRecordid"
+                        [(ngModel)]="invoiceInfo.payRecordid" required maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.payRecordid?.dirty && editForm.controls.payRecordid?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.payRecordid?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.payRecordid?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 50 }">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.invoiceInfo.invguId" for="field_invguId" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.invguId' | translate">Invgu Id</label>
+                    <input type="text" class="form-control" name="invguId" id="field_invguId"
+                        [(ngModel)]="invoiceInfo.invguId" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.invguId?.dirty && editForm.controls.invguId?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.invguId?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.invoiceInfo.fpdm" for="field_fpdm" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.fpdm' | translate">Fpdm</label>
+                    <input type="text" class="form-control" name="fpdm" id="field_fpdm"
+                        [(ngModel)]="invoiceInfo.fpdm" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.fpdm?.dirty && editForm.controls.fpdm?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.fpdm?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.invoiceInfo.fphm" for="field_fphm" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.fphm' | translate">Fphm</label>
+                    <input type="text" class="form-control" name="fphm" id="field_fphm"
+                        [(ngModel)]="invoiceInfo.fphm" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.fphm?.dirty && editForm.controls.fphm?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.fphm?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.invoiceInfo.kpr" for="field_kpr">Kpr</label>
+                    <input type="text" class="form-control" name="kpr" id="field_kpr"
+                        [(ngModel)]="invoiceInfo.kpr" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.kpr?.dirty && editForm.controls.kpr?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.kpr?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.invoiceInfo.kprId" for="field_kprId">Kpr Id</label>
+                    <input type="text" class="form-control" name="kprId" id="field_kprId"
+                        [(ngModel)]="invoiceInfo.kprId" maxlength="20"/>
+                    <div [hidden]="!(editForm.controls.kprId?.dirty && editForm.controls.kprId?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.kprId?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 20 }">
+                        This field cannot be longer than 20 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.invoiceInfo.reson" for="field_reson" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.reson' | translate">Reson</label>
+                    <input type="text" class="form-control" name="reson" id="field_reson"
+                        [(ngModel)]="invoiceInfo.reson" maxlength="255"/>
+                    <div [hidden]="!(editForm.controls.reson?.dirty && editForm.controls.reson?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.reson?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 255 }">
+                        This field cannot be longer than 255 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.invoiceInfo.createTime" for="field_createTime" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.createTime' | translate">Create Time</label>
+                    <div class="d-flex">
+                        <input id="field_createTime" type="datetime-local" class="form-control" name="createTime" [(ngModel)]="createTime"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.invoiceInfo.updateTime" for="field_updateTime" [ngbTooltip]="'invoiceprojectApp.invoiceInfo.help.updateTime' | translate">Update Time</label>
+                    <div class="d-flex">
+                        <input id="field_updateTime" type="datetime-local" class="form-control" name="updateTime" [(ngModel)]="updateTime"
+                        />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="invoiceprojectApp.invoiceInfo.extract" for="field_extract">Extract</label>
+                    <select class="form-control" id="field_extract" name="extract" [(ngModel)]="invoiceInfo.extractId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="eInvoiceInfoOption.id" *ngFor="let eInvoiceInfoOption of extracts; trackBy: trackEInvoiceInfoById">{{eInvoiceInfoOption.fphm}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="invoiceReport">
+            <h2><span jhiTranslate="invoiceprojectApp.invoiceReport.detail.title">Invoice Report</span> {{invoiceReport.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="invoiceprojectApp.invoiceReport.fs" [ngbTooltip]="'invoiceprojectApp.invoiceReport.help.fs' | translate">Fs</span></dt>
+                <dd>
+                    <span>{{invoiceReport.fs}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.invoiceReport.jehj" [ngbTooltip]="'invoiceprojectApp.invoiceReport.help.jehj' | translate">Jehj</span></dt>
+                <dd>
+                    <span>{{invoiceReport.jehj}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.invoiceReport.sehj" [ngbTooltip]="'invoiceprojectApp.invoiceReport.help.sehj' | translate">Sehj</span></dt>
+                <dd>
+                    <span>{{invoiceReport.sehj}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.invoiceReport.jshj" [ngbTooltip]="'invoiceprojectApp.invoiceReport.help.jshj' | translate">Jshj</span></dt>
+                <dd>
+                    <span>{{invoiceReport.jshj}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.invoiceReport.nsrsum" [ngbTooltip]="'invoiceprojectApp.invoiceReport.help.nsrsum' | translate">Nsrsum</span></dt>
+                <dd>
+                    <span>{{invoiceReport.nsrsum}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.invoiceReport.createTime" [ngbTooltip]="'invoiceprojectApp.invoiceReport.help.createTime' | translate">Create Time</span></dt>
+                <dd>
+                    <span>{{invoiceReport.createTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.invoiceReport.updateTime" [ngbTooltip]="'invoiceprojectApp.invoiceReport.help.updateTime' | translate">Update Time</span></dt>
+                <dd>
+                    <span>{{invoiceReport.updateTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/invoice-report', invoiceReport.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

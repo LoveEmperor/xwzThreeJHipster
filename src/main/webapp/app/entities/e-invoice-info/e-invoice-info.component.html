@@ -1,0 +1,76 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="invoiceprojectApp.eInvoiceInfo.home.title">E Invoice Infos</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-e-invoice-info" [routerLink]="['/e-invoice-info/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="invoiceprojectApp.eInvoiceInfo.home.createLabel">
+            Create new E Invoice Info
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="eInvoiceInfos">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.eInvoiceInfo.fpdm">Fpdm</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.eInvoiceInfo.fphm">Fphm</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.eInvoiceInfo.kprq">Kprq</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.eInvoiceInfo.xfsh">Xfsh</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.eInvoiceInfo.xfmc">Xfmc</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.eInvoiceInfo.gfsh">Gfsh</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.eInvoiceInfo.gfmc">Gfmc</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.eInvoiceInfo.jehj">Jehj</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.eInvoiceInfo.sehj">Sehj</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.eInvoiceInfo.url">Url</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.eInvoiceInfo.createTime">Create Time</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.eInvoiceInfo.updateTime">Update Time</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let eInvoiceInfo of eInvoiceInfos ;trackBy: trackId">
+                <td><a [routerLink]="['/e-invoice-info', eInvoiceInfo.id, 'view' ]">{{eInvoiceInfo.id}}</a></td>
+                <td>{{eInvoiceInfo.fpdm}}</td>
+                <td>{{eInvoiceInfo.fphm}}</td>
+                <td>{{eInvoiceInfo.kprq}}</td>
+                <td>{{eInvoiceInfo.xfsh}}</td>
+                <td>{{eInvoiceInfo.xfmc}}</td>
+                <td>{{eInvoiceInfo.gfsh}}</td>
+                <td>{{eInvoiceInfo.gfmc}}</td>
+                <td>{{eInvoiceInfo.jehj}}</td>
+                <td>{{eInvoiceInfo.sehj}}</td>
+                <td>{{eInvoiceInfo.url}}</td>
+                <td>{{eInvoiceInfo.createTime | date:'medium'}}</td>
+                <td>{{eInvoiceInfo.updateTime | date:'medium'}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/e-invoice-info', eInvoiceInfo.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/e-invoice-info', eInvoiceInfo.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'e-invoice-info/'+ eInvoiceInfo.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

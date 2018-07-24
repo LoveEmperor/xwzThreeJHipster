@@ -1,0 +1,47 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="accessToken">
+            <h2><span jhiTranslate="invoiceprojectApp.accessToken.detail.title">Access Token</span> {{accessToken.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="invoiceprojectApp.accessToken.nsrmc" [ngbTooltip]="'invoiceprojectApp.accessToken.help.nsrmc' | translate">Nsrmc</span></dt>
+                <dd>
+                    <span>{{accessToken.nsrmc}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.accessToken.nsrsbh" [ngbTooltip]="'invoiceprojectApp.accessToken.help.nsrsbh' | translate">Nsrsbh</span></dt>
+                <dd>
+                    <span>{{accessToken.nsrsbh}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.accessToken.expires" [ngbTooltip]="'invoiceprojectApp.accessToken.help.expires' | translate">Expires</span></dt>
+                <dd>
+                    <span>{{accessToken.expires}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.accessToken.pkey" [ngbTooltip]="'invoiceprojectApp.accessToken.help.pkey' | translate">Pkey</span></dt>
+                <dd>
+                    <span>{{accessToken.pkey}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.accessToken.createTime" [ngbTooltip]="'invoiceprojectApp.accessToken.help.createTime' | translate">Create Time</span></dt>
+                <dd>
+                    <span>{{accessToken.createTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.accessToken.updateTime" [ngbTooltip]="'invoiceprojectApp.accessToken.help.updateTime' | translate">Update Time</span></dt>
+                <dd>
+                    <span>{{accessToken.updateTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/access-token', accessToken.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

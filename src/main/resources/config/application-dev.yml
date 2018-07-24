@@ -17,7 +17,7 @@ logging:
     level:
         ROOT: DEBUG
         io.github.jhipster: DEBUG
-        com.xwz.invoiceproject: DEBUG
+        com.fangle.invoiceproject: DEBUG
 
 spring:
     profiles:
@@ -82,6 +82,13 @@ spring:
 # ===================================================================
 server:
     port: 8080
+
+# 中税平台
+zsinvoiceProject:
+   enable: true
+   url: http://www.taxinfo123.com:8082/tcis
+   appId: 0d0c67b8295a11e7b7434cd30abca22q
+   appSecret: 57111-78743-49030
 
 # ===================================================================
 # JHipster specific properties

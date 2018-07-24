@@ -1,0 +1,94 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="invoiceprojectApp.invoiceInfo.home.title">Invoice Infos</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-invoice-info" [routerLink]="['/invoice-info/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="invoiceprojectApp.invoiceInfo.home.createLabel">
+            Create new Invoice Info
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="invoiceInfos">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span jhiTranslate="global.field.id">ID</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.invoiceInfo.kpTime">Kp Time</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.invoiceInfo.kpStatus">Kp Status</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.invoiceInfo.kpMoney">Kp Money</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.invoiceInfo.titleType">Title Type</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.invoiceInfo.invoiceTitle">Invoice Title</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.invoiceInfo.qydutyNum">Qyduty Num</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.invoiceInfo.fpContent">Fp Content</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.invoiceInfo.email">Email</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.invoiceInfo.phone">Phone</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.invoiceInfo.payRecordid">Pay Recordid</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.invoiceInfo.invguId">Invgu Id</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.invoiceInfo.fpdm">Fpdm</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.invoiceInfo.fphm">Fphm</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.invoiceInfo.kpr">Kpr</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.invoiceInfo.kprId">Kpr Id</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.invoiceInfo.reson">Reson</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.invoiceInfo.createTime">Create Time</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.invoiceInfo.updateTime">Update Time</span></th>
+            <th><span jhiTranslate="invoiceprojectApp.invoiceInfo.extract">Extract</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let invoiceInfo of invoiceInfos ;trackBy: trackId">
+                <td><a [routerLink]="['/invoice-info', invoiceInfo.id, 'view' ]">{{invoiceInfo.id}}</a></td>
+                <td>{{invoiceInfo.kpTime}}</td>
+                <td>{{invoiceInfo.kpStatus}}</td>
+                <td>{{invoiceInfo.kpMoney}}</td>
+                <td>{{invoiceInfo.titleType}}</td>
+                <td>{{invoiceInfo.invoiceTitle}}</td>
+                <td>{{invoiceInfo.qydutyNum}}</td>
+                <td>{{invoiceInfo.fpContent}}</td>
+                <td>{{invoiceInfo.email}}</td>
+                <td>{{invoiceInfo.phone}}</td>
+                <td>{{invoiceInfo.payRecordid}}</td>
+                <td>{{invoiceInfo.invguId}}</td>
+                <td>{{invoiceInfo.fpdm}}</td>
+                <td>{{invoiceInfo.fphm}}</td>
+                <td>{{invoiceInfo.kpr}}</td>
+                <td>{{invoiceInfo.kprId}}</td>
+                <td>{{invoiceInfo.reson}}</td>
+                <td>{{invoiceInfo.createTime | date:'medium'}}</td>
+                <td>{{invoiceInfo.updateTime | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="invoiceInfo.extractId">
+                        <a [routerLink]="['../e-invoice-info', invoiceInfo.extractId , 'view' ]" >{{invoiceInfo.extractFphm}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/invoice-info', invoiceInfo.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/invoice-info', invoiceInfo.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'invoice-info/'+ invoiceInfo.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+
+{
+    "invoiceprojectApp": {
+        "application" : {
+            "home": {
+                "title": "Applications",
+                "createLabel": "Create a new Application",
+                "createOrEditLabel": "Create or edit a Application"
+            },
+            "created": "A new Application is created with identifier {{ param }}",
+            "updated": "A Application is updated with identifier {{ param }}",
+            "deleted": "A Application is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Application {{ id }}?"
+            },
+            "detail": {
+                "title": "Application"
+            },
+            "appId": "App Id",
+            "appSecret": "App Secret",
+            "createTime": "Create Time",
+            "updateTime": "Update Time",
+            "help": {
+                "appId": "用户AS账号",
+                "appSecret": "用户AS密码",
+                "createTime": "创建时间",
+                "updateTime": "更新时间"
+            }
+        }
+    }
+}

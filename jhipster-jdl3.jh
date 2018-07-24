@@ -1,0 +1,14 @@
+
+/**
+ * invoiceProject
+ **/
+
+/**系统签到获取Token*/
+entity AccessToken{
+  nsrmc String maxlength(30) /**纳税人名称*/
+  nsrsbh String required maxlength(30) /**纳税人识别号*/
+  expires String maxlength(8) /**超时时间秒*/
+  pkey String required maxlength(40) /**请求密钥*/
+  createTime Instant /**创建时间*/
+  updateTime Instant /**更新时间*/
+}

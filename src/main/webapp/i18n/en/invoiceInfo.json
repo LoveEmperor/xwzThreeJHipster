@@ -1,0 +1,58 @@
+
+{
+    "invoiceprojectApp": {
+        "invoiceInfo" : {
+            "home": {
+                "title": "Invoice Infos",
+                "createLabel": "Create a new Invoice Info",
+                "createOrEditLabel": "Create or edit a Invoice Info"
+            },
+            "created": "A new Invoice Info is created with identifier {{ param }}",
+            "updated": "A Invoice Info is updated with identifier {{ param }}",
+            "deleted": "A Invoice Info is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Invoice Info {{ id }}?"
+            },
+            "detail": {
+                "title": "Invoice Info"
+            },
+            "kpTime": "Kp Time",
+            "kpStatus": "Kp Status",
+            "kpMoney": "Kp Money",
+            "titleType": "Title Type",
+            "invoiceTitle": "Invoice Title",
+            "qydutyNum": "Qyduty Num",
+            "fpContent": "Fp Content",
+            "email": "Email",
+            "phone": "Phone",
+            "payRecordid": "Pay Recordid",
+            "invguId": "Invgu Id",
+            "fpdm": "Fpdm",
+            "fphm": "Fphm",
+            "kpr": "Kpr",
+            "kprId": "Kpr Id",
+            "reson": "Reson",
+            "createTime": "Create Time",
+            "updateTime": "Update Time",
+            "extract": "Extract",
+            "help": {
+                "kpTime": "开票时间",
+                "kpStatus": "1:开票中、2：成功、3：失败",
+                "kpMoney": "开票金额(分)",
+                "titleType": "1:个人、2：企业",
+                "invoiceTitle": "发票抬头",
+                "qydutyNum": "企业税号",
+                "fpContent": "发票内容",
+                "email": "电子邮箱",
+                "phone": "手机号码",
+                "payRecordid": "关联支付记录id",
+                "invguId": "查询开票结果唯一标识",
+                "fpdm": "发票代码",
+                "fphm": "发票号码",
+                "reson": "失败原因",
+                "createTime": "创建时间",
+                "updateTime": "更新时间"
+            }
+        }
+    }
+}

@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="eInvoiceInfo">
+            <h2><span jhiTranslate="invoiceprojectApp.eInvoiceInfo.detail.title">E Invoice Info</span> {{eInvoiceInfo.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="invoiceprojectApp.eInvoiceInfo.fpdm" [ngbTooltip]="'invoiceprojectApp.eInvoiceInfo.help.fpdm' | translate">Fpdm</span></dt>
+                <dd>
+                    <span>{{eInvoiceInfo.fpdm}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.eInvoiceInfo.fphm" [ngbTooltip]="'invoiceprojectApp.eInvoiceInfo.help.fphm' | translate">Fphm</span></dt>
+                <dd>
+                    <span>{{eInvoiceInfo.fphm}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.eInvoiceInfo.kprq" [ngbTooltip]="'invoiceprojectApp.eInvoiceInfo.help.kprq' | translate">Kprq</span></dt>
+                <dd>
+                    <span>{{eInvoiceInfo.kprq}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.eInvoiceInfo.xfsh" [ngbTooltip]="'invoiceprojectApp.eInvoiceInfo.help.xfsh' | translate">Xfsh</span></dt>
+                <dd>
+                    <span>{{eInvoiceInfo.xfsh}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.eInvoiceInfo.xfmc" [ngbTooltip]="'invoiceprojectApp.eInvoiceInfo.help.xfmc' | translate">Xfmc</span></dt>
+                <dd>
+                    <span>{{eInvoiceInfo.xfmc}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.eInvoiceInfo.gfsh" [ngbTooltip]="'invoiceprojectApp.eInvoiceInfo.help.gfsh' | translate">Gfsh</span></dt>
+                <dd>
+                    <span>{{eInvoiceInfo.gfsh}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.eInvoiceInfo.gfmc" [ngbTooltip]="'invoiceprojectApp.eInvoiceInfo.help.gfmc' | translate">Gfmc</span></dt>
+                <dd>
+                    <span>{{eInvoiceInfo.gfmc}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.eInvoiceInfo.jehj" [ngbTooltip]="'invoiceprojectApp.eInvoiceInfo.help.jehj' | translate">Jehj</span></dt>
+                <dd>
+                    <span>{{eInvoiceInfo.jehj}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.eInvoiceInfo.sehj" [ngbTooltip]="'invoiceprojectApp.eInvoiceInfo.help.sehj' | translate">Sehj</span></dt>
+                <dd>
+                    <span>{{eInvoiceInfo.sehj}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.eInvoiceInfo.url" [ngbTooltip]="'invoiceprojectApp.eInvoiceInfo.help.url' | translate">Url</span></dt>
+                <dd>
+                    <span>{{eInvoiceInfo.url}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.eInvoiceInfo.createTime" [ngbTooltip]="'invoiceprojectApp.eInvoiceInfo.help.createTime' | translate">Create Time</span></dt>
+                <dd>
+                    <span>{{eInvoiceInfo.createTime}}</span>
+                </dd>
+                <dt><span jhiTranslate="invoiceprojectApp.eInvoiceInfo.updateTime" [ngbTooltip]="'invoiceprojectApp.eInvoiceInfo.help.updateTime' | translate">Update Time</span></dt>
+                <dd>
+                    <span>{{eInvoiceInfo.updateTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/e-invoice-info', eInvoiceInfo.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

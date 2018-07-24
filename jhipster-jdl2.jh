@@ -1,0 +1,79 @@
+
+/**
+ * invoiceProject
+ **/
+
+/**系统用户*/
+entity Application{
+    appId String required maxlength(36) /**用户AS账号*/
+    appSecret String required maxlength(36) /**用户AS密码*/
+    createTime Instant /**创建时间*/
+    updateTime Instant /**更新时间*/
+}
+
+/**系统签到获取Token*/
+entity AccessToken{
+  nsrmc String maxlength(20) /**纳税人名称*/
+  nsrsbh String required maxlength(20) /**纳税人识别号*/
+  expires String maxlength(8) /**超时时间秒*/
+  pkey String required maxlength(20) /**请求密钥*/
+  createTime Instant /**创建时间*/
+  updateTime Instant /**更新时间*/
+}
+
+/**用户发票信息*/
+entity InvoiceInfo{
+  kpTime String required /**开票时间*/
+  kpStatus String required maxlength(4) /**1:开票中、2：成功、3：失败*/
+  kpMoney Integer required  /**开票金额(分)*/
+  titleType String required maxlength(4) /**1:个人、2：企业*/
+  invoiceTitle String required maxlength(11) /**发票抬头*/
+  qydutyNum String  maxlength(20) /**企业税号*/
+  fpContent String maxlength(12) /**发票内容*/
+  email String maxlength(12) /**电子邮箱*/
+  phone String maxlength(12) /**手机号码*/
+  payRecordid String required maxlength(50) /**关联支付记录id*/
+  invguId String  maxlength(20) /** 查询开票结果唯一标识*/
+  fpdm String  maxlength(20) /**发票代码*/
+  fphm String  maxlength(20) /**发票号码*/
+  kpr String  maxlength(20)
+  kprId String  maxlength(20)
+  reson String maxlength(255) /**失败原因*/
+  createTime Instant /**创建时间*/
+  updateTime Instant /**更新时间*/
+}
+
+
+/**发票电子版式文件*/
+entity EInvoiceInfo{
+  fpdm String required maxlength(12) /**发票代码*/
+  fphm String required maxlength(8) /**发票号码*/
+  kprq String maxlength(14) /**开票日期*/
+  xfsh String maxlength(20) /**销方税号*/
+  xfmc String maxlength(14) /**销方名称*/
+  gfsh String maxlength(20) /**购方税号*/
+  gfmc String maxlength(14) /**购方名称*/
+  jehj String maxlength(11) /**金额合计*/
+  sehj String maxlength(11) /**税额合计*/
+  url String maxlength(60) /**pdf文件路径*/
+  createTime Instant /**创建时间*/
+  updateTime Instant /**更新时间*/
+}
+
+/**发票统计信息*/
+entity InvoiceReport{
+  fs String required maxlength(11) /**开具总份数*/
+  jehj String required maxlength(12) /**金额合计*/
+  sehj String  maxlength(8) /**税额合计*/
+  jshj String  maxlength(20) /**价税合计*/
+  nsrsum String  maxlength(20) /**开票纳税人合计*/
+  createTime Instant /**创建时间*/
+  updateTime Instant /**更新时间*/
+}
+
+relationship OneToOne{
+ InvoiceInfo{extract(fphm)} to EInvoiceInfo
+}
+
+dto * with mapstruct
+service all with serviceClass except AccessToken, InvoiceReport
